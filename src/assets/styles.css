@@ -1,0 +1,42 @@
+/* .container{
+    display: grid;
+    grid-template-columns: repeat(13, 1fr);
+    justify-content: center;
+    align-items: center;
+    grid-gap: 1rem;
+  }
+
+.container div{
+    border: 2px solid black;
+    width: 8rem;
+    height: 8rem;
+} */
+
+
+
+.Boxes{
+    width: 10rem;
+    height: 10rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    justify-items: center;
+  }
+  
+  .Boxes div{
+    display: flex;
+    justify-content: center;
+    text-align: center;
+    justify-items: center;
+    font-size: 1.8rem;
+  }
+  
+  .Boxes .time{
+    font-size: 6rem;
+    display: flex; 
+    height: 5rem;
+    margin-left: 2px;
+  }
+  .Boxes .label{
+    font-size: 1rem;
+  }
