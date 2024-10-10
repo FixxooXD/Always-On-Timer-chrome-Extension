@@ -15,8 +15,8 @@
 
 
 .Boxes{
-    width: 10rem;
-    height: 10rem;
+    width: 12rem;
+    height: 12rem;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -28,7 +28,7 @@
     justify-content: center;
     text-align: center;
     justify-items: center;
-    font-size: 1.8rem;
+    font-size: 2rem;
   }
   
   .Boxes .time{
@@ -38,5 +38,5 @@
     margin-left: 2px;
   }
   .Boxes .label{
-    font-size: 1rem;
+    font-size: 1.5rem;
   }

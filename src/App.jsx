@@ -13,7 +13,6 @@ export default function App() {
   const saveTargetDate = (targetDate) => {
     if (targetDate) {
       chrome.storage.sync.set({ targetDate }, function () {
-        console.log("Target date saved:", targetDate);
         window.location.reload();
       });
     }
@@ -46,7 +45,6 @@ export default function App() {
     loadTargetDate(); // Call the async function
   }, []);
 
-  console.log(TargetDate);
 
   const targetDateInMs = new Date(TargetDate).getTime();
 
@@ -79,8 +77,7 @@ export default function App() {
     const months = Math.floor((timeInMs / (1000 * 60 * 60 * 24 * 30)) % 12);
     const years = Math.floor(timeInMs / (1000 * 60 * 60 * 24 * 365));
 
-    const formattedMilliseconds =
-      milliseconds < 10 ? `0${milliseconds}` : milliseconds;
+    const formattedMilliseconds = milliseconds < 10 ? `0${milliseconds}` : milliseconds;
     const formattedSeconds = seconds < 10 ? `0${seconds}` : seconds;
     const formattedMinutes = minutes < 10 ? `0${minutes}` : minutes;
     const formattedHours = hours < 10 ? `0${hours}` : hours;
@@ -88,10 +85,16 @@ export default function App() {
     const formatedMonths = months < 10 ? `0${months}` : months;
     const formattedYears = years < 10 ? `0${years}` : years;
 
-    return `  ${formattedYears} Years ${formatedMonths} Months ${formattedDays} Days ${formattedHours} Hours ${formattedMinutes} Minutes ${formattedSeconds} Seconds ${formattedMilliseconds}`;
+    return {
+      milliseconds: formattedMilliseconds,
+      seconds: formattedSeconds,
+      minutes: formattedMinutes,
+      hours: formattedHours,
+      days: formattedDays,
+      months: formatedMonths,
+      years: formattedYears
+    };
   };
-  console.log(settingsClicked);
-  
 
   return (
     <div>
