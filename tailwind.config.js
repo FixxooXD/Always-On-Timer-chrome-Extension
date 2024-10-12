@@ -7,7 +7,7 @@ export default {
   theme: {
     extend: {
       fontFamily: {
-        monster: ["Roboto Condensed"],
+        monster: ["Roboto"],
       },
     },
   },

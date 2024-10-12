@@ -8,11 +8,20 @@ export default function App() {
   const [timeremaining, setTimeRemaining] = useState(0);
   const [isRunning, setIsRunning] = useState(false);
   const [TargetDate, setTargetDate] = useState("");
+  const [customLabel, setCustomLabel] = useState("How Much Time Left?");
 
   // Function to save date to chrome storage
   const saveTargetDate = (targetDate) => {
     if (targetDate) {
       chrome.storage.sync.set({ targetDate }, function () {
+        window.location.reload();
+      });
+    }
+  };
+
+  const customLabelSave = (label) => {
+    if (label) {
+      chrome.storage.sync.set({ label }, function () {
         window.location.reload();
       });
     }
@@ -30,10 +39,23 @@ export default function App() {
     });
   };
 
+  const getLabel = () => {
+    return new Promise((resolve, reject) => {
+      //Saving the label in Chrome Storage
+      chrome.storage.sync.get(["label"], (result) => {
+        if (chrome.runtime.lastError) {
+          return reject(chrome.runtime.lastError);
+        }
+        resolve(result.label);
+      });
+    });
+  };
+
   // Load the saved date from chrome storage when the component mounts
   useEffect(() => {
     const loadTargetDate = async () => {
       try {
+        //Saving the Target Date in Chrome Storage
         const savedTargetDate = await getTargetDate();
         console.log("Target date loaded:", savedTargetDate);
         setTargetDate(savedTargetDate || null); // Set to null if no date is found
@@ -41,8 +63,19 @@ export default function App() {
         console.error("Error loading target date:", error);
       }
     };
+
+    const loadLabel = async () => {
+      try {
+        const savedLabel = await getLabel();
+        console.log("Target date loaded:", savedLabel);
+        setCustomLabel(savedLabel || null); // Set to null if no date is found
+      } catch (error) {
+        console.error("Error loading target date:", error);
+      }
+    };
   
     loadTargetDate(); // Call the async function
+    loadLabel(); //Getting Label
   }, []);
 
 
@@ -98,19 +131,23 @@ export default function App() {
 
   return (
     <div>
-      <button onClick={() => setSettingsClicked(!settingsClicked)} className='w-full bg-white px-2 py-1 shadow-2xl'>
-      <Bars3Icon className="size-6" />
-      </button>
+      <nav className='w-full bg-white px-2 py-1 shadow-2xl'>
+      <button><Bars3Icon onClick={() => setSettingsClicked(!settingsClicked)} className="size-6" /></button>
+      </nav>
       {settingsClicked ? (
          <Settings
           saveTargetDate={saveTargetDate}
+          TargetDate={TargetDate}
           setSettingsClicked={setSettingsClicked}
+          customLabelSave={customLabelSave}
+          customLabel={customLabel}
         />
       ) : (
         // <TimerClock formatTime={formatTime} timeremaining={timeremaining} />
         <BackgroundBeamsWithCollisionDemo
         formatTime={formatTime}
         timeremaining={timeremaining}
+        customLabel={customLabel}
       />
       )}
     </div>

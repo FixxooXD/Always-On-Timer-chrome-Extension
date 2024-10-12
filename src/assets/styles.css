@@ -1,42 +1,53 @@
-/* .container{
-    display: grid;
-    grid-template-columns: repeat(13, 1fr);
-    justify-content: center;
-    align-items: center;
-    grid-gap: 1rem;
-  }
+.Boxes {
+  width: 12rem;
+  height: 12rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  justify-items: center;
+}
 
-.container div{
-    border: 2px solid black;
-    width: 8rem;
-    height: 8rem;
-} */
+.Boxes div {
+  display: flex;
+  justify-content: center;
+  text-align: center;
+  justify-items: center;
+  font-size: 2rem;
+}
 
+.Boxes .time {
+  font-size: 6rem;
+  display: flex;
+  height: 5rem;
+  margin-left: 2px;
+}
+.Boxes .label {
+  font-size: 1.5rem;
+}
 
+#myDate {
+  position: relative;
+  overflow: hidden;
+}
 
-.Boxes{
-    width: 12rem;
-    height: 12rem;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    justify-items: center;
-  }
-  
-  .Boxes div{
-    display: flex;
-    justify-content: center;
-    text-align: center;
-    justify-items: center;
-    font-size: 2rem;
-  }
-  
-  .Boxes .time{
-    font-size: 6rem;
-    display: flex; 
-    height: 5rem;
-    margin-left: 2px;
-  }
-  .Boxes .label{
-    font-size: 1.5rem;
-  }
+#myDate::-webkit-calendar-picker-indicator {
+  display: block;
+  top: 0;
+  left: 0;
+  background: transparent;
+  position: absolute;
+  cursor: pointer;
+  width: 100%;
+  height: 100%;
+}
+
+form {
+  position: relative;
+  background-color: rgba(0, 0, 0, 0.5); /* Semi-transparent black */
+  backdrop-filter: blur(10px); /* Adjust the blur amount as needed */
+  -webkit-backdrop-filter: blur(10px); /* For Safari support */
+  border-radius: 10px; /* Optional: for rounded corners */
+  padding: 20px; /* Adjust padding as needed */
+  caret-color: purple;
+  text-indent: 15px;
+}
