@@ -16,13 +16,76 @@
 }
 
 .Boxes .time {
-  font-size: 6rem;
+  font-size: 6vw; /* Responsive font size based on viewport width */
   display: flex;
-  height: 5rem;
+  height: 5vw; /* Responsive height */
   margin-left: 2px;
 }
+
+/* For tablet screens (less than 768px) */
+@media (max-width: 768px) {
+  .Boxes .time {
+    font-size: 4rem; /* Adjusted font size for tablets */
+    height: 4rem;    /* Adjusted height */
+    margin-left: 1px; /* Smaller margin for tablets */
+  }
+}
+
+/* For mobile screens (less than 640px) */
+@media (max-width: 640px) {
+  .Boxes .time {
+    font-size: 3.5rem; /* Reduced font size for smaller mobile screens */
+    height: 3.5rem;    /* Adjusted height */
+    margin-left: 1px;  /* Smaller margin */
+  }
+}
+
+/* For very small screens (less than 480px) */
+@media (max-width: 480px) {
+  .Boxes .time {
+    font-size: 1rem; /* Further reduced font size for very small screens */
+    height: 1rem;    /* Adjusted height */
+    margin-left: 0;  /* Remove margin */
+  }
+}
+
+/* For ultra-small screens (less than 360px) */
+@media (max-width: 360px) {
+  .Boxes .time {
+    font-size: 2.5rem; /* Smaller font size for ultra-small screens */
+    height: 2.5rem;    /* Adjusted height */
+    margin-left: 0;    /* Remove margin */
+  }
+}
+
+
 .Boxes .label {
   font-size: 1.5rem;
+}
+
+.custom-label {
+  font-size: 2.5rem; /* Default size for larger screens */
+}
+
+/* For screens less than 640px (small mobile screens) */
+@media (max-width: 640px) {
+  .custom-label {
+    font-size: 1.8rem; /* Smaller font for mobile */
+  }
+}
+
+/* For mobile screens (less than 640px) */
+@media (max-width: 640px) {
+  .Boxes .label {
+    font-size: 1.2rem; /* Reduced font size for smaller mobile screens */
+  }
+}
+
+/* For very small screens (less than 480px) */
+@media (max-width: 480px) {
+  .Boxes .label {
+    font-size: 1rem; /* Further reduced font size for very small screens */
+  }
 }
 
 #myDate {
@@ -51,3 +114,4 @@ form {
   caret-color: purple;
   text-indent: 15px;
 }
+
