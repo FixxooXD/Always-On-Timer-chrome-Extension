@@ -1,6 +1,6 @@
 # New Tab Timer
 
-![Logo](public/assets/icons/icon-128.png)
+![Logo](https://github.com/FixxooXD/Always-On-Timer-chrome-Extension/blob/main/public/assets/icons/logo128.png)
 
 ## Description
 
