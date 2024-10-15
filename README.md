@@ -77,3 +77,9 @@ The following are the key properties of the `manifest.json` file used to define 
 ### Usage
 Once installed, the timer will automatically be displayed every time you open a new tab in the Chrome browser.
 You can click on the extension icon in the toolbar to customize your timer settings, including setting a target date or adding a custom label.
+
+## Index snap
+![Logo](https://github.com/FixxooXD/Always-On-Timer-chrome-Extension/blob/main/src/assets/snapshots/Index.png)
+
+## Settings snap
+![Logo](https://github.com/FixxooXD/Always-On-Timer-chrome-Extension/blob/main/src/assets/snapshots/Settings.png)
