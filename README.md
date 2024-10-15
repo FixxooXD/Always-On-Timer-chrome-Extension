@@ -56,8 +56,9 @@ The following are the key properties of the `manifest.json` file used to define 
         "<all_urls>"
     ]
 }
-
+```
 ## File Structure
+```File Structure
 
 ├── public
 │   ├── assets
@@ -72,7 +73,7 @@ The following are the key properties of the `manifest.json` file used to define 
 │   └── App.js
 ├── README.md
 ├── manifest.json
-
-Usage
+```
+### Usage
 Once installed, the timer will automatically be displayed every time you open a new tab in the Chrome browser.
 You can click on the extension icon in the toolbar to customize your timer settings, including setting a target date or adding a custom label.
