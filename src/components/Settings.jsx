@@ -52,7 +52,7 @@ export function Settings({
                 className="bg-gradient-to-r border from-purple-500 via-violet-500 to-pink-500 bg-clip-text text-transparent text-[1.2rem] text-start px-2 w-full h-[3rem] font-bold font-monster transition duration-300 ease-in-out focus:ring-2 focus:ring-purple-500"
               />
               <p className="text-sm text-gray-500 mt-1">
-                {label.length}/35 characters Only
+                {label?.length}/35 characters Only
               </p>  
             </div>
             <div className="flex flex-col mb-4">

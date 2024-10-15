@@ -1,25 +1,26 @@
 {
-    "manifest_version": 3,
-    "name": "New Tab Timer",
-    "description": "A timer displayed on every new tab in the browser.",
-    "version": "1.0",
-    "action": {
-      "default_popup": "index.html",
-      "default_title": "New Tab Timer"
-    },
-    "chrome_url_overrides": {
-      "newtab": "index.html"
-    },
-    "permissions": [
-      "storage"
-    ],
-    "background": {
-      "service_worker": "background.js"
-    },
-    "content_security_policy": {
-      "extension_pages": "script-src 'self'; object-src 'self'"
-    },
-    "host_permissions": [
-      "<all_urls>"
-    ]
-  }  
+  "manifest_version": 3,
+  "name": "TagTime",
+  "description": "Tag Your Time, Shape Your Goals!!",
+  "version": "1.0",
+  "action": {
+    "default_title": "TagTime"
+  },
+  "chrome_url_overrides": {
+    "newtab": "index.html"
+  },
+  "permissions": ["storage"],
+  "background": {
+    "service_worker": "background.js"
+  },
+  "content_security_policy": {
+    "extension_pages": "script-src 'self'; object-src 'self'"
+  },
+  "host_permissions": ["<all_urls>"],
+  "icons": {
+    "16": "assets/icons/Logo16.png",
+    "32": "assets/icons/Logo32.png",
+    "48": "assets/icons/Logo48.png",
+    "128": "assets/icons/Logo128.png"
+  }
+}
