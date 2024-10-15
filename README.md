@@ -1,4 +1,4 @@
-# New Tab Timer
+# TimeTag
 
 ![Logo](https://github.com/FixxooXD/Always-On-Timer-chrome-Extension/blob/main/public/assets/icons/logo128.png)
 
